@@ -98,6 +98,7 @@ ul.main_menu img {
   line-height: 37px;
   vertical-align: middle;
 }
+
 .playlist_names > li {
   padding: 5px 0;
 }
@@ -165,6 +166,7 @@ section.covers {
 
 .cover_rows {
   padding-left: 20px;
+  padding-right: 10px;
   height: calc(100vh - 90px);
   width: 100%;
   overflow-y: scroll;
@@ -213,13 +215,14 @@ section.covers {
 .cover_rows .items {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 25px;
 }
 .cover_rows .items .card {
-  width: calc(100% / 6);
   max-width: 177px;
   margin-right: 16px;
+  margin-bottom: 10px;
   text-align: center;
 }
 .card > .img_section {
@@ -404,9 +407,24 @@ a.play_btn {
 }
 
 
+/* MEDIA QUERIES */
 
+@media screen and (max-width: 639px) {
+  .player_left, .player_right, .player_center {
+    width: calc(100% / 3);
+  }
 
+  .volume_slider {
+    width: 51%;
+  }
+  .volume_level {
+    width: 20%;
+  }
 
+  .track_info {
+    width: 43%;
+  }
+}
 
 @media screen and (max-width: 552px) {
   aside.sidebar {
@@ -441,36 +459,5 @@ a.play_btn {
 
   section.covers, .upgrade_row {
     width: calc(100vw - 50px);
-  }
-
-
-}
-
-
-
-
-@media screen and (max-width: 639px) {
-  .player_left, .player_right, .player_center {
-    width: calc(100% / 3);
-  }
-
-  .volume_slider {
-    width: 51%;
-  }
-  .volume_level {
-    width: 20%;
-  }
-
-  .track_info {
-    width: 43%;
-  }
-
-  .cover_rows .items {
-    flex-wrap: wrap;
-    /* spostare questa proprietà in un altro breakpoint, quello più alto in base al modello, e non ripeterlo */
-  }
-  .cover_rows .items .card {
-    width: 50%;
-    /* questa è la proprietà che cambia per i diversi breakpoints */
   }
 }
