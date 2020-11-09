@@ -68,6 +68,12 @@ aside.sidebar {
 ul.main_menu li {
   padding: 3px 20px;
 }
+ul.main_menu li a {
+  transition: color 1s;
+}
+ul.main_menu li a:hover {
+  color: #fff;
+}
 ul.main_menu li:first-child {
   display: none;
 } 
@@ -101,6 +107,9 @@ ul.main_menu img {
 
 .playlist_names > li {
   padding: 5px 0;
+}
+.playlist_names > li:hover {
+  color: #fff;
 }
 
 /* bottom content */
@@ -163,6 +172,9 @@ section.covers {
   border: 1px solid #fff;
   border-radius: 2rem;
 }
+.upgrade_row > a:hover {
+  transform: scale(1.1);
+}
 
 .cover_rows {
   padding-left: 20px;
@@ -220,24 +232,21 @@ section.covers {
   margin-top: 25px;
 }
 .cover_rows .items .card {
-  max-width: 177px;
-  margin-right: 16px;
+  flex-basis: calc(100% / 6 - 10px);
+  margin-right: 10px;
   margin-bottom: 10px;
   text-align: center;
 }
 .card > .img_section {
-  height: 177px;
-  max-width: 177px;
   position: relative;
 }
 .img_section > img {
   width: 100%;
-  height: 100%;
 }
 .img_section > .overlay {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 98%; /* questa cosa mi sembra strana... se metto 100% sborda un pelo e invece così ci va preciso sopra. Anche vedendo le dimensioni con l'inspector sembra che debba funzionare con 100% - sarà chrome? vedere... */
   left: 0;
   top: 0;
   justify-content: center;
@@ -348,6 +357,9 @@ footer {
 a.play_btn {
   font-size: 2rem;
 }
+a.play_btn:hover {
+  transform: scale(1.2);
+}
 
 .track_timing {
   width: 50%;
@@ -409,7 +421,18 @@ a.play_btn {
 
 /* MEDIA QUERIES */
 
+@media screen and (max-width: 878px) {
+  .cover_rows .items .card {
+    flex-basis: calc(100% / 4 - 10px);
+  }
+}
+
+
 @media screen and (max-width: 639px) {
+  .cover_rows .items .card {
+    flex-basis: calc(100% / 2 - 10px);
+  }
+
   .player_left, .player_right, .player_center {
     width: calc(100% / 3);
   }
@@ -425,6 +448,7 @@ a.play_btn {
     width: 43%;
   }
 }
+
 
 @media screen and (max-width: 552px) {
   aside.sidebar {
