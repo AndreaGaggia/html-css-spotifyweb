@@ -485,3 +485,11 @@ a.play_btn:hover {
     width: calc(100vw - 50px);
   }
 }
+
+/* una soluzione per far apparire la scroll bar sulla lista playlist_names */
+@media screen and (max-height: 514px) {
+  .playlist_names {
+
+    overflow-y: scroll;
+  }
+}
