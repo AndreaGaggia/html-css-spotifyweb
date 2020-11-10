@@ -527,4 +527,10 @@ a.play_btn:hover {
     align-items: center;
     justify-content: space-between;
   }
+  .cover_rows .items .card {
+    flex-basis: calc(100% - 10px);
+  }
+  .cover_rows > ul.centered_menu {
+    flex-direction: column;
+  }
 }
